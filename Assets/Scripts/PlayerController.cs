@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRangeDown);
         }
 
+        //de input vertalen naar movement in de game
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
 
