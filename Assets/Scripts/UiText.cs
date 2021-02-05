@@ -26,7 +26,10 @@ public class UiText : MonoBehaviour
     void Update()
     {
         gameOver.text = "";
-        timeLimit -= Time.deltaTime;
+        if (timeLimit > -0.1)
+        {
+            timeLimit -= Time.deltaTime;
+        }
         time.text = "Time: ";
         time.text += timeLimit.ToString();
         scoreDisplay.text = "Score: ";
