@@ -8,7 +8,7 @@ public class DetectCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text = GameObject.Find("scoredisplay").GetComponent<UiText>();
+        text = GameObject.Find("scoredisplay").GetComponent<UiText>();//get the score from the scoredisplay object
     }
 
     // Update is called once per frame  
@@ -17,7 +17,7 @@ public class DetectCollision : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other) //als de speler in de hitbox van de mol komt --> verwijder 
+    private void OnTriggerEnter(Collider other) //if the player enter the moles hitbox --> destroy mole
     {
         Destroy(gameObject);
         text.score++;

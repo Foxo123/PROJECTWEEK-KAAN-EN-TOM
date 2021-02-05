@@ -13,10 +13,11 @@ public class SpawnManager : MonoBehaviour
     public float spawnInterval = 2;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnMole", startTime, spawnInterval);
+        InvokeRepeating("SpawnMole", startTime, spawnInterval);//keep spawning the moles after the startime with the spawn interval
     }
 
     // Update is called once per frame

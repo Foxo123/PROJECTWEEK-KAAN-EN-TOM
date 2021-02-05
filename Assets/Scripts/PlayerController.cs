@@ -9,21 +9,23 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public float speed = 10f;
     public float xRange = 10f;
-    public float zRangeDown = -8f;
-    public float zRangeUp = -1f;
+    public float zRangeDown = -11.5f;
+    public float zRangeUp = 2f;
+    UiText time;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        time = GameObject.Find("scoredisplay").GetComponent<UiText>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //get input from the player
+        //input from the player
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        
 
 
         //prevent the player from going out of bounds
@@ -44,10 +46,12 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRangeDown);
         }
 
-        //de input vertalen naar movement in de game
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
-
+        //translate the input to movement in the game
+        if (!time.timeUp)//if the time is up stop movement
+        {
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+            transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
+        }
 
             
 
