@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //input from the player
+        //input frxom the player
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         
@@ -50,11 +50,11 @@ public class PlayerController : MonoBehaviour
         if (!time.timeUp)//if the time is up stop movement
         {
             transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-            transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
+            transform.Translate(Vector3.up  * verticalInput * Time.deltaTime * speed);
         }
 
             
-
+     
 
 
     }
